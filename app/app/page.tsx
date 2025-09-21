@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Settings, BarChart3, Upload } from "lucide-react"
 import Link from "next/link"
 import { useRef, useState } from "react"
+import { parseCSV, importTasks } from "@/lib/import-utils"
 
 export default function AppPage() {
   const { user, loading: authLoading, signOut } = useAuth()
@@ -62,33 +63,7 @@ export default function AppPage() {
     refreshCategories()
   }
 
-  const parseCSV = (text: string) => {
-    const lines = text.split('\n').filter(line => line.trim())
-    const headers = lines[0].split(',')
-    return lines.slice(1).map(line => {
-      const values = line.split(',')
-      const task: any = {}
-      headers.forEach((header, index) => {
-        const key = header.trim().toLowerCase()
-        const value = values[index]?.trim() || ''
-        if (key.includes('date')) task.date = value
-        else if (key.includes('focus') || key.includes('area')) task.focus_area = value
-        else if (key.includes('task') && !key.includes('details')) task.title = value
-        else if (key.includes('details') || key.includes('resources')) task.details = value
-        else if (key.includes('time')) task.time_estimate = value
-      })
-      return {
-        ...task,
-        status: 'todo',
-        notes: null,
-        links: null,
-        code: null,
-        code_language: null,
-        is_dsa: task.focus_area?.toLowerCase().includes('dsa') || false,
-        completed_at: null
-      }
-    })
-  }
+
 
   const handleFileImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -106,28 +81,8 @@ export default function AppPage() {
         tasksToImport = Array.isArray(data) ? data : data.tasks || []
       }
 
-      // Create categories first
-      const uniqueAreas = Array.from(new Set(tasksToImport.map(t => t.focus_area).filter(Boolean)))
-      const existingCategoryNames = categories.map(c => c.name)
-      const categoryColors = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4']
-      
-      for (const area of uniqueAreas) {
-        if (!existingCategoryNames.includes(area)) {
-          await addCategory({
-            name: area,
-            color: categoryColors[Math.floor(Math.random() * categoryColors.length)]
-          })
-        }
-      }
-
-      // Then create tasks
-      for (const task of tasksToImport) {
-        if (task.date && task.title) {
-          await addTask(task)
-        }
-      }
-
-      alert(`Successfully imported ${uniqueAreas.length} categories and ${tasksToImport.length} tasks!`)
+      const result = await importTasks(tasksToImport, categories, addCategory, addTask)
+      alert(`Successfully imported ${result.categories} categories and ${result.tasks} tasks!`)
     } catch (error) {
       console.error('Import failed:', error)
       alert('Failed to import tasks. Please check the file format.')

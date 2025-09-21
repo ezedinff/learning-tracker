@@ -17,6 +17,7 @@ type Category = Database['public']['Tables']['categories']['Row']
 import { Search, Filter, Calendar, ExternalLink, Clock, CheckCircle, Circle, X, Trash2 } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useRouter } from "next/navigation"
+import { loadSampleData } from "@/lib/import-utils"
 
 interface TaskListProps {
   tasks: Task[]
@@ -290,6 +291,21 @@ export function TaskList({ tasks, categories, onUpdateTask, onDeleteTasks, onTas
                 <TableCell colSpan={8} className="text-center py-12">
                   <p className="text-muted-foreground text-lg">No tasks found</p>
                   <p className="text-sm text-muted-foreground mt-2">Try adjusting your filters or search query</p>
+                  {tasks.length === 0 && (
+                    <Button 
+                      variant="outline" 
+                      className="mt-4"
+                      onClick={async () => {
+                        try {
+                          await loadSampleData(onTaskAdded!)
+                        } catch (error) {
+                          console.error('Failed to load sample data:', error)
+                        }
+                      }}
+                    >
+                      Load Sample Data
+                    </Button>
+                  )}
                 </TableCell>
               </TableRow>
             ) : (
