@@ -9,7 +9,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Plus, Save, X } from "lucide-react"
-import { db, type Task, type Category } from "@/lib/db"
+import { useApiTasks } from "@/hooks/use-api"
+import type { Database } from "@/lib/supabase"
+
+type Task = Database['public']['Tables']['tasks']['Row']
+type Category = Database['public']['Tables']['categories']['Row']
 
 interface TaskFormProps {
   onTaskAdded?: (task: Task) => void
@@ -17,6 +21,7 @@ interface TaskFormProps {
 }
 
 export function TaskForm({ onTaskAdded, categories }: TaskFormProps) {
+  const { addTask } = useApiTasks()
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState({
     date: new Date().toISOString().split("T")[0],
@@ -35,9 +40,21 @@ export function TaskForm({ onTaskAdded, categories }: TaskFormProps) {
     }
 
     try {
-      const newTask = await db.addTask({
-        ...formData,
+      const newTask = await addTask({
+        date: formData.date,
+        focus_area: formData.focusArea,
+        title: formData.title,
+        details: formData.details,
+        time_estimate: formData.timeEstimate,
         status: "todo" as const,
+        notes: null,
+        links: null,
+        code: null,
+        code_language: null,
+        is_dsa: false,
+        completed_at: null,
+        audio_path: null,
+        audio_duration: null
       })
 
       onTaskAdded?.(newTask)
