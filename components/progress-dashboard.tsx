@@ -164,7 +164,7 @@ export function ProgressDashboard({ tasks, categories }: ProgressDashboardProps)
             <p className="text-xs text-muted-foreground">
               {stats.completed} of {stats.total} tasks completed
             </p>
-            <Progress value={stats.completionRate} className="mt-2" />
+            <Progress value={stats.completionRate} />
           </CardContent>
         </Card>
 
@@ -330,7 +330,7 @@ export function ProgressDashboard({ tasks, categories }: ProgressDashboardProps)
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Progress value={data.total > 0 ? (data.completed / data.total) * 100 : 0} className="h-2" />
+                <Progress value={data.total > 0 ? (data.completed / data.total) * 100 : 0} />
 
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div className="flex items-center gap-2">

@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="/app" className="font-medium transition-colors hover:text-foreground text-muted-foreground text-sm cursor-pointer">
+          <Link href="/login" className="font-medium transition-colors hover:text-foreground text-muted-foreground text-sm cursor-pointer">
             Sign In
           </Link>
           <Link href="/app" className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm">
