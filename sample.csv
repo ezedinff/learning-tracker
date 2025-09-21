@@ -1,0 +1,71 @@
+Date,Focus Area,Task,Details/Resources,Time (approx)
+2025-09-19,DSA,Two Sum,LeetCode #1,45m
+2025-09-19,English,Explain Two Sum aloud,Record yourself,15m
+2025-09-19,System Design,Read about Load Balancers,System Design Primer,30m
+2025-09-20,DSA,Contains Duplicate,LeetCode #217,45m
+2025-09-20,English,Explain Contains Duplicate,Focus on "time complexity",15m
+2025-09-20,System Design,Read about Caching (Redis),System Design Primer,45m
+2025-09-21,DSA,Best Time to Buy/Sell Stock,LeetCode #121,45m
+2025-09-21,English,Explain Best Time to Buy Stock aloud,Focus on O(n) solution,15m
+2025-09-21,System Design,Draw a simple diagram for Load Balancer + Cache,Paper/Excalidraw,45m
+2025-09-22,DSA,Valid Anagram,LeetCode #242,45m
+2025-09-22,English,Read solution aloud,Record and listen,15m
+2025-09-23,DSA,Group Anagrams,LeetCode #49,45m
+2025-09-23,English,Explain Grouping strategy aloud,Hashmap,15m
+2025-09-24,DSA,Valid Palindrome,LeetCode #125,45m
+2025-09-24,English,Say: "I use two pointers because...",Practice,15m
+2025-09-25,DSA,Longest Substring Without Repeating Characters,LeetCode #3,45m
+2025-09-25,English,Explain sliding window idea aloud,Record,15m
+2025-09-26,DSA,Reverse Linked List,LeetCode #206,45m
+2025-09-26,English,Explain iterative vs recursive aloud,15m
+2025-09-27,DSA,Merge Two Sorted Lists,LeetCode #21,45m
+2025-09-27,English,Explain merge step aloud,15m
+2025-09-27,System Design,Read: Relational DB vs NoSQL,System Design Primer,45m
+2025-09-28,DSA,Linked List Cycle,LeetCode #141,45m
+2025-09-28,English,Explain Floyd’s cycle detection aloud,15m
+2025-09-28,System Design,Design URL Shortener,Write 3–4 bullet points,60m
+2025-09-29,DSA,Remove Nth Node from End,LeetCode #19,45m
+2025-09-29,English,Explain "two pointers" aloud,15m
+2025-09-30,DSA,Valid Parentheses,LeetCode #20,45m
+2025-09-30,English,Explain why stack is needed,15m
+2025-10-01,DSA,Min Stack,LeetCode #155,45m
+2025-10-01,English,Practice: "push, pop in O(1)",15m
+2025-10-02,DSA,Daily Temperatures,LeetCode #739,45m
+2025-10-02,English,Explain monotonic stack aloud,15m
+2025-10-03,DSA,Binary Search,LeetCode #704,45m
+2025-10-03,English,Explain O(log n) aloud,15m
+2025-10-04,DSA,Search in Rotated Sorted Array,LeetCode #33,45m
+2025-10-04,English,Explain step-by-step aloud,15m
+2025-10-04,System Design,Read about Message Queues (Kafka basics),Article/YouTube,60m
+2025-10-05,DSA,Find Minimum in Rotated Sorted Array,LeetCode #153,45m
+2025-10-05,English,Practice summary: "binary search variant",15m
+2025-10-05,System Design,Design simple "Messaging Queue" diagram,Paper/Excalidraw,60m
+2025-10-06,DSA,Maximum Depth of Binary Tree,LeetCode #104,45m
+2025-10-06,English,Explain recursion aloud,15m
+2025-10-07,DSA,Validate Binary Search Tree,LeetCode #98,45m
+2025-10-07,English,Explain inorder traversal aloud,15m
+2025-10-08,DSA,Lowest Common Ancestor,LeetCode #235,45m
+2025-10-08,English,Explain choice at each node aloud,15m
+2025-10-09,DSA,Binary Tree Level Order Traversal,LeetCode #102,45m
+2025-10-09,English,Explain BFS queue aloud,15m
+2025-10-10,DSA,Number of Islands,LeetCode #200,45m
+2025-10-10,English,Explain DFS/BFS approach aloud,15m
+2025-10-11,DSA,Clone Graph,LeetCode #133,45m
+2025-10-11,English,Explain hashmap+DFS aloud,15m
+2025-10-11,System Design,Read about Horizontal vs Vertical Scaling,System Design Primer,45m
+2025-10-12,DSA,Course Schedule,LeetCode #207,45m
+2025-10-12,English,Explain topological sort aloud,15m
+2025-10-12,System Design,Design "Instagram Feed" simplified,Notes+diagram,60m
+2025-10-13,DSA,Subsets,LeetCode #78,45m
+2025-10-13,English,Explain recursion/backtracking aloud,15m
+2025-10-14,DSA,Combination Sum,LeetCode #39,45m
+2025-10-14,English,Explain pruning aloud,15m
+2025-10-15,DSA,Permutations,LeetCode #46,45m
+2025-10-15,English,Explain recursion tree aloud,15m
+2025-10-16,DSA,Word Search,LeetCode #79,45m
+2025-10-16,English,Explain backtracking aloud,15m
+2025-10-17,DSA,Kth Largest Element in Array,LeetCode #215,45m
+2025-10-17,English,Explain heap solution aloud,15m
+2025-10-18,DSA,Top K Frequent Elements,LeetCode #347,45m
+2025-10-18,English,Explain bucket sort vs heap aloud,15m
+2025-10-18,System Design,Read about Caching strategies (LRU, LFU),System Design Primer,45m
