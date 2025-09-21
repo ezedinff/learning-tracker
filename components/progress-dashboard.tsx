@@ -89,7 +89,7 @@ export function ProgressDashboard({ tasks, categories }: ProgressDashboardProps)
     )
 
     // Streak calculation
-    const completedDates = [...new Set(tasks.filter((t) => t.status === "completed").map((t) => t.date))].sort()
+    const completedDates = Array.from(new Set(tasks.filter((t) => t.status === "completed").map((t) => t.date))).sort()
 
     let currentStreak = 0
     const today = new Date()

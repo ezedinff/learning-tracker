@@ -54,14 +54,14 @@ export default function ConfirmPage() {
             </div>
             <h1 className="text-2xl font-bold text-white mb-2">Check your email</h1>
             <p className="text-zinc-400">
-              We've sent you a confirmation link. Click the link in your email to activate your account.
+              We&apos;ve sent you a confirmation link. Click the link in your email to activate your account.
             </p>
           </div>
 
           <div className="space-y-4">
             <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4">
               <p className="text-sm text-zinc-300">
-                <strong>Didn't receive the email?</strong>
+                <strong>Didn&apos;t receive the email?</strong>
               </p>
               <ul className="text-xs text-zinc-400 mt-2 space-y-1">
                 <li>• Check your spam/junk folder</li>

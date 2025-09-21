@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { supabase, type Database } from "@/lib/supabase"
+import { createClient, type Database } from "@/lib/supabase"
 import { useAuth } from "./use-auth"
 
 type Task = Database['public']['Tables']['tasks']['Row']
@@ -17,6 +17,7 @@ export function useSupabaseTasks() {
   const refreshTasks = async () => {
     if (!user) return
     try {
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('tasks')
         .select('*')
@@ -39,6 +40,7 @@ export function useSupabaseTasks() {
   const addTask = async (task: Omit<TaskInsert, 'user_id'>) => {
     if (!user) throw new Error('User not authenticated')
     
+    const supabase = createClient()
     const { data, error } = await supabase
       .from('tasks')
       .insert({ ...task, user_id: user.id })
@@ -53,6 +55,7 @@ export function useSupabaseTasks() {
   const updateTask = async (id: string, updates: Partial<Task>) => {
     if (!user) throw new Error('User not authenticated')
     
+    const supabase = createClient()
     const { data, error } = await supabase
       .from('tasks')
       .update({ ...updates, updated_at: new Date().toISOString() })
@@ -83,6 +86,7 @@ export function useSupabaseCategories() {
   const refreshCategories = async () => {
     if (!user) return
     try {
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('categories')
         .select('*')
@@ -105,6 +109,7 @@ export function useSupabaseCategories() {
   const addCategory = async (category: Omit<CategoryInsert, 'user_id'>) => {
     if (!user) throw new Error('User not authenticated')
     
+    const supabase = createClient()
     const { data, error } = await supabase
       .from('categories')
       .insert({ ...category, user_id: user.id })
@@ -119,6 +124,7 @@ export function useSupabaseCategories() {
   const updateCategory = async (id: string, updates: Partial<Category>) => {
     if (!user) throw new Error('User not authenticated')
     
+    const supabase = createClient()
     const { data, error } = await supabase
       .from('categories')
       .update(updates)
@@ -135,6 +141,7 @@ export function useSupabaseCategories() {
   const deleteCategory = async (id: string) => {
     if (!user) throw new Error('User not authenticated')
     
+    const supabase = createClient()
     const { error } = await supabase
       .from('categories')
       .delete()

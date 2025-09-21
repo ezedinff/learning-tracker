@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -82,30 +82,7 @@ export function TaskCard({ task, categories, onUpdate, onUploadAudio }: TaskCard
       }
     }
     loadAudioRecording()
-  }, [task.audio_path])
-
-  // Timer countdown effect
-  useEffect(() => {
-    let interval: NodeJS.Timeout | null = null
-    
-    if (isTimerActive && timeRemaining !== null && timeRemaining > 0) {
-      interval = setInterval(() => {
-        setTimeRemaining((prev) => {
-          if (prev === null || prev <= 1) {
-            setIsTimerActive(false)
-            // Auto-complete task when timer reaches 0
-            handleStatusChange("completed")
-            return 0
-          }
-          return prev - 1
-        })
-      }, 1000)
-    }
-
-    return () => {
-      if (interval) clearInterval(interval)
-    }
-  }, [isTimerActive, timeRemaining])
+  }, [task.audio_path, task.audio_duration])
 
   // Parse time estimate to seconds
   const parseTimeToSeconds = (timeStr: string): number => {
@@ -141,7 +118,7 @@ export function TaskCard({ task, categories, onUpdate, onUploadAudio }: TaskCard
     setIsEditing(false)
   }
 
-  const handleStatusChange = async (status: Task["status"]) => {
+  const handleStatusChange = useCallback(async (status: Task["status"]) => {
     const updates: Partial<Task> = { status }
     if (status === "completed") {
       updates.completed_at = new Date().toISOString()
@@ -157,7 +134,30 @@ export function TaskCard({ task, categories, onUpdate, onUploadAudio }: TaskCard
       setIsTimerActive(false)
     }
     await onUpdate(task.id, updates)
-  }
+  }, [task.id, task.time_estimate, onUpdate])
+
+  // Timer countdown effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null
+    
+    if (isTimerActive && timeRemaining !== null && timeRemaining > 0) {
+      interval = setInterval(() => {
+        setTimeRemaining((prev) => {
+          if (prev === null || prev <= 1) {
+            setIsTimerActive(false)
+            // Auto-complete task when timer reaches 0
+            handleStatusChange("completed")
+            return 0
+          }
+          return prev - 1
+        })
+      }, 1000)
+    }
+
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [isTimerActive, timeRemaining, handleStatusChange])
 
   const handlePauseTimer = () => {
     setIsTimerActive(false)

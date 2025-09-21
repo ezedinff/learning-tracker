@@ -63,7 +63,7 @@ export function AudioPlayer({ recording, className }: AudioPlayerProps) {
       audio.removeEventListener("durationchange", updateDuration)
       audio.removeEventListener("ended", handleEnded)
     }
-  }, [recording.url])
+  }, [recording.url, recording.duration])
 
   const togglePlayPause = () => {
     const audio = audioRef.current

@@ -23,6 +23,8 @@ type Task = {
   code_language: string | null
   is_dsa: boolean
   completed_at: string | null
+  audio_path: string | null
+  audio_duration: number | null
   created_at: string
   updated_at: string
 }
@@ -84,13 +86,15 @@ export default function TaskPage() {
     focusArea: apiTask.focus_area,
     timeEstimate: apiTask.time_estimate,
     isDSA: apiTask.is_dsa,
-    completedAt: apiTask.completed_at || undefined,
+    completedAt: apiTask.completed_at,
     createdAt: apiTask.created_at,
     updatedAt: apiTask.updated_at,
-    codeLanguage: apiTask.code_language || undefined,
-    notes: apiTask.notes || undefined,
-    links: apiTask.links || undefined,
-    code: apiTask.code || undefined,
+    codeLanguage: apiTask.code_language,
+    notes: apiTask.notes,
+    links: apiTask.links,
+    code: apiTask.code,
+    audio_path: apiTask.audio_path,
+    audio_duration: apiTask.audio_duration,
   })
 
   // Convert API categories to TaskCard format
