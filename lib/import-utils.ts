@@ -57,7 +57,7 @@ export const importTasks = async (
 }
 
 export const loadSampleData = async (onTaskAdded: (task: any) => void | Promise<any>) => {
-  const response = await fetch('https://cpgghmisukyrvtgeplep.supabase.co/storage/v1/object/public/assets/sample.csv')
+  const response = await fetch(process.env.NEXT_PUBLIC_SAMPLE_CSV_URL || 'https://cpgghmisukyrvtgeplep.supabase.co/storage/v1/object/public/assets/tasks.csv')
   const text = await response.text()
   const tasksToImport = parseCSV(text)
   
