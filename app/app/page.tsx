@@ -5,7 +5,7 @@ import { useApiTasks, useApiCategories } from "@/hooks/use-api"
 import { useAuth } from "@/hooks/use-auth"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Brain, Settings, BarChart3, Upload } from "lucide-react"
+import { BookOpen, Brain, BarChart3, Upload, LogOut } from "lucide-react"
 import Link from "next/link"
 import { useRef, useState } from "react"
 import { parseCSV, importTasks } from "@/lib/import-utils"
@@ -160,7 +160,7 @@ export default function AppPage() {
                 </Button>
               </Link>
               <Button variant="ghost" size="sm" className="px-2 sm:px-3" onClick={() => signOut()}>
-                <Settings className="h-4 w-4" />
+                <LogOut className="h-4 w-4" />
                 <span className="hidden sm:inline sm:ml-2">Sign Out</span>
               </Button>
             </div>
