@@ -63,7 +63,7 @@ export const loadSampleData = async (onTaskAdded: (task: any) => void | Promise<
   
   for (const task of tasksToImport) {
     if (task.date && task.title) {
-      await onTaskAdded(task)
+      onTaskAdded(task)
     }
   }
 }

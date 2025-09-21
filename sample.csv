@@ -1,112 +1,85 @@
-Date,Category,Task,Details/Resources,Time (approx)
+Date,Focus Area,Task,Details/Resources,Time (approx)
 2025-09-21,DSA,Two Sum,LeetCode #1 - Use HashMap to store complements. Focus on O(n) solution. https://leetcode.com/problems/two-sum/,45m
 2025-09-21,Behavioral & Cultural Fit,"Tell me about a time you solved a tough technical problem.","Practice STAR (Situation, Task, Action, Result). Amazon LP: 'Invent and Simplify'. Resource: https://www.interviewkickstart.com/interview-questions/amazon-leadership-principles",30m
 2025-09-21,System Design,Intro to Load Balancers & Caching,"Read System Design Primer: https://github.com/donnemartin/system-design-primer#load-balancer and caching section. Take notes on why load balancers improve scalability.",45m
-
 2025-09-22,DSA,Best Time to Buy/Sell Stock,LeetCode #121 - Track min price, compute max profit. https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,45m
 2025-09-22,Behavioral & Cultural Fit,"Tell me about a time you disagreed with a teammate.","Practice STAR. Google values 'collaboration' and Amazon LP 'Have Backbone; Disagree and Commit'. Resource: https://igotanoffer.com/blogs/tech/behavioral-interview-questions",30m
 2025-09-22,System Design,Database Basics,"Read about SQL vs NoSQL. https://www.geeksforgeeks.org/sql-vs-nosql/ Compare trade-offs in scalability and consistency.",45m
-
 2025-09-23,DSA,Valid Anagram,LeetCode #242 - Use sorting O(n log n) or HashMap O(n). https://leetcode.com/problems/valid-anagram/,45m
 2025-09-23,Behavioral & Cultural Fit,"Tell me about a time you failed.","Practice showing what you learned from failure. Amazon LP 'Learn and Be Curious'. Resource: https://www.pathrise.com/guides/behavioral-interview-questions/",30m
 2025-09-23,System Design,URL Shortener,"Design TinyURL system. Key points: Hashing, collisions, DB design. Resource: https://github.com/donnemartin/system-design-primer#design-a-url-shortener",60m
-
 2025-09-24,DSA,Group Anagrams,LeetCode #49 - Use HashMap with sorted string as key. https://leetcode.com/problems/group-anagrams/,45m
 2025-09-24,Behavioral & Cultural Fit,"Tell me about a time you took initiative.","Practice STAR. Google values 'bias to action'. Resource: https://interviewgenie.com/blog-1/2017/7/12/google-behavioral-interview-questions",30m
 2025-09-24,System Design,Scalability Basics,"Read about vertical vs horizontal scaling. Resource: https://www.scaleyourapp.com/vertical-vs-horizontal-scaling",45m
-
 2025-09-25,DSA,Longest Substring Without Repeating Characters,LeetCode #3 - Sliding window with HashSet. https://leetcode.com/problems/longest-substring-without-repeating-characters/,45m
 2025-09-25,Behavioral & Cultural Fit,"Tell me about a time you delivered under pressure.","Amazon LP: 'Deliver Results'. Focus on clear outcome. Resource: https://interviewgenie.com/blog-1/2018/2/21/amazon-leadership-principles-interview-questions",30m
 2025-09-25,System Design,Messaging Queue,"Read about Kafka basics. Resource: https://kafka.apache.org/intro. Understand why queues decouple services.",45m
-
 2025-09-26,DSA,Reverse Linked List,LeetCode #206 - Iterative vs Recursive. https://leetcode.com/problems/reverse-linked-list/,45m
 2025-09-26,Behavioral & Cultural Fit,"Describe a time you improved a process.","Amazon LP: 'Invent and Simplify'. Focus on measurable improvement.",30m
 2025-09-26,System Design,Design Chat App (WhatsApp-lite),"Cover messaging service, delivery guarantees, DB choice. Resource: https://github.com/donnemartin/system-design-primer#design-a-chat-system",60m
-
 2025-09-27,DSA,Merge Two Sorted Lists,LeetCode #21 - Use dummy node and pointers. https://leetcode.com/problems/merge-two-sorted-lists/,45m
 2025-09-27,Behavioral & Cultural Fit,"Tell me about a time you influenced a decision.","Google values 'communication & persuasion'. STAR format. Resource: https://igotanoffer.com/blogs/tech/google-behavioral-interview",30m
 2025-09-27,System Design,Database Sharding,"Read about horizontal partitioning and shard keys. Resource: https://www.geeksforgeeks.org/what-is-database-sharding/",45m
-
 2025-09-28,DSA,Linked List Cycle,LeetCode #141 - Floyd’s Cycle Detection. https://leetcode.com/problems/linked-list-cycle/,45m
 2025-09-28,Behavioral & Cultural Fit,"Tell me about a time you had conflict in a team.","Amazon LP: 'Earn Trust', 'Have Backbone'. Resource: https://interviewgenie.com/blog-1/2018/1/18/amazon-behavioral-interview-questions",30m
 2025-09-28,System Design,Design News Feed (Facebook-lite),"Focus on fan-out vs pull, caching, DB. Resource: https://github.com/donnemartin/system-design-primer#design-a-news-feed-system",60m
-
 2025-09-29,DSA,Remove Nth Node from End of List,LeetCode #19 - Use two pointers. https://leetcode.com/problems/remove-nth-node-from-end-of-list/,45m
 2025-09-29,Behavioral & Cultural Fit,"Tell me about a time you had to learn something quickly.","Google values 'learning ability'. Resource: https://www.pathrise.com/guides/google-behavioral-interview-questions/",30m
 2025-09-29,System Design,Caching Strategies,"Read about LRU, LFU. Resource: https://medium.com/system-design-blog/cache-design-strategies-101-9f4da8b97b4d",45m
-
 2025-09-30,DSA,Valid Parentheses,LeetCode #20 - Use Stack. https://leetcode.com/problems/valid-parentheses/,45m
 2025-09-30,Behavioral & Cultural Fit,"Describe a time you took ownership.","Amazon LP: 'Ownership'. Focus on how you went beyond your role.",30m
 2025-09-30,System Design,Design Rate Limiter,"Use token bucket or leaky bucket algorithm. Resource: https://www.educative.io/answers/what-is-a-token-bucket-algorithm",60m
-
 2025-10-01,DSA,Min Stack,LeetCode #155 - Track min in stack with auxiliary stack. https://leetcode.com/problems/min-stack/,45m
 2025-10-01,Behavioral & Cultural Fit,"Tell me about your biggest achievement.","Microsoft values 'impact and results'. STAR answer with metrics.",30m
 2025-10-01,System Design,Intro to Consistency & Availability,"Read about CAP theorem. Resource: https://www.ibm.com/think/topics/cap-theorem",45m
-
 2025-10-02,DSA,Daily Temperatures,LeetCode #739 - Use monotonic stack. https://leetcode.com/problems/daily-temperatures/,45m
 2025-10-02,Behavioral & Cultural Fit,"Tell me about a time you handled ambiguity.","Google values 'dealing with ambiguity'. Focus on structure.",30m
 2025-10-02,System Design,Design Google Docs (collaborative editing),"Focus on concurrency, version control. Resource: https://github.com/donnemartin/system-design-primer#design-google-docs",60m
-
 2025-10-03,DSA,Binary Search,LeetCode #704 - Standard binary search. https://leetcode.com/problems/binary-search/,45m
 2025-10-03,Behavioral & Cultural Fit,"Tell me about a time you had to prioritize tasks.","Amazon LP: 'Bias for Action'.",30m
 2025-10-03,System Design,Read about CDN (Content Delivery Networks),"Why CDNs reduce latency. Resource: https://www.cloudflare.com/learning/cdn/what-is-a-cdn/",45m
-
 2025-10-04,DSA,Search in Rotated Sorted Array,LeetCode #33 - Binary search with rotation logic. https://leetcode.com/problems/search-in-rotated-sorted-array/,45m
 2025-10-04,Behavioral & Cultural Fit,"Tell me about a time you managed stakeholders.","Microsoft values 'collaboration and influence'.",30m
 2025-10-04,System Design,Design YouTube Video Streaming (simplified),"Focus on storage, caching, CDN. Resource: https://github.com/donnemartin/system-design-primer#design-youtube-or-netflix",60m
-
 2025-10-05,DSA,Find Minimum in Rotated Sorted Array,LeetCode #153 - Binary search. https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,45m
 2025-10-05,Behavioral & Cultural Fit,"Tell me about a time you helped a teammate succeed.","Google values 'helping others succeed'.",30m
 2025-10-05,System Design,Design Dropbox (file storage),"Cover metadata, chunking, replication. Resource: https://github.com/donnemartin/system-design-primer#design-a-dropbox-like-system",60m
-
 2025-10-06,DSA,Maximum Depth of Binary Tree,LeetCode #104 - Simple DFS recursion. https://leetcode.com/problems/maximum-depth-of-binary-tree/,45m
 2025-10-06,Behavioral & Cultural Fit,"Tell me about a time you handled a difficult deadline.","Amazon LP: 'Deliver Results'.",30m
 2025-10-06,System Design,Read about Leader Election,"Understand Raft, Paxos basics. Resource: https://raft.github.io/",45m
-
 2025-10-07,DSA,Validate Binary Search Tree,LeetCode #98 - Recursion with bounds. https://leetcode.com/problems/validate-binary-search-tree/,45m
 2025-10-07,Behavioral & Cultural Fit,"Tell me about a time you managed risk.","Microsoft values 'decision making under uncertainty'.",30m
 2025-10-07,System Design,Design Twitter Timeline,"Fan-out on write vs read. Resource: https://github.com/donnemartin/system-design-primer#design-a-twitter-timeline",60m
-
 2025-10-08,DSA,Lowest Common Ancestor of BST,LeetCode #235 - Traverse using BST property. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/,45m
 2025-10-08,Behavioral & Cultural Fit,"Tell me about a time you influenced without authority.","Google values 'leadership without title'.",30m
 2025-10-08,System Design,Read about Eventual Consistency,"CAP theorem trade-offs. Resource: https://www.allthingsdistributed.com/2007/12/eventually_consistent.html",45m
-
 2025-10-09,DSA,Binary Tree Level Order Traversal,LeetCode #102 - BFS queue. https://leetcode.com/problems/binary-tree-level-order-traversal/,45m
 2025-10-09,Behavioral & Cultural Fit,"Tell me about a time you worked with a diverse team.","Google values 'diversity and inclusion'.",30m
 2025-10-09,System Design,Design E-commerce Checkout System,"Cover transactions, payment gateway, inventory. Resource: https://github.com/donnemartin/system-design-primer#design-an-online-shop",60m
-
 2025-10-10,DSA,Number of Islands,LeetCode #200 - DFS/BFS flood fill. https://leetcode.com/problems/number-of-islands/,45m
 2025-10-10,Behavioral & Cultural Fit,"Tell me about a time you challenged the status quo.","Amazon LP: 'Think Big'.",30m
 2025-10-10,System Design,Design Notification System,"Push vs pull, queues, retries. Resource: https://github.com/donnemartin/system-design-primer#design-an-notification-system",60m
-
 2025-10-11,DSA,Clone Graph,LeetCode #133 - DFS with HashMap for visited. https://leetcode.com/problems/clone-graph/,45m
 2025-10-11,Behavioral & Cultural Fit,"Tell me about a time you dealt with conflicting priorities.","Microsoft values 'collaboration and prioritization'.",30m
 2025-10-11,System Design,Design Payment System (Stripe-lite),"Transactions, idempotency, retries. Resource: https://github.com/donnemartin/system-design-primer#design-a-payment-system",60m
-
 2025-10-12,DSA,Course Schedule,LeetCode #207 - Topological sort. https://leetcode.com/problems/course-schedule/,45m
 2025-10-12,Behavioral & Cultural Fit,"Tell me about a time you mentored someone.","Google values 'helping others grow'.",30m
 2025-10-12,System Design,Design Search Autocomplete,"Trie + ranking + caching. Resource: https://github.com/donnemartin/system-design-primer#design-a-search-autocomplete-system",60m
-
 2025-10-13,DSA,Subsets,LeetCode #78 - Backtracking recursion. https://leetcode.com/problems/subsets/,45m
 2025-10-13,Behavioral & Cultural Fit,"Tell me about a time you took a big risk.","Amazon LP: 'Bias for Action'.",30m
 2025-10-13,System Design,Read about Partition Tolerance,"CAP theorem deep dive. Resource: https://medium.com/@saigowthamr/cap-theorem-51df21ecb9a5",45m
-
 2025-10-14,DSA,Combination Sum,LeetCode #39 - Backtracking with pruning. https://leetcode.com/problems/combination-sum/,45m
 2025-10-14,Behavioral & Cultural Fit,"Tell me about a time you managed up.","Microsoft values 'managing expectations upward'.",30m
 2025-10-14,System Design,Design Ride-Sharing System (Uber-lite),"Cover matching, geospatial queries. Resource: https://github.com/donnemartin/system-design-primer#design-a-ride-sharing-service",60m
-
 2025-10-15,DSA,Permutations,LeetCode #46 - DFS backtracking. https://leetcode.com/problems/permutations/,45m
 2025-10-15,Behavioral & Cultural Fit,"Tell me about a time you showed leadership.","Google values 'emergent leadership'.",30m
 2025-10-15,System Design,Design Pastebin,"Hashing, expiration, DB design. Resource: https://github.com/donnemartin/system-design-primer#design-pastebin",60m
-
 2025-10-16,DSA,Word Search,LeetCode #79 - Backtracking DFS. https://leetcode.com/problems/word-search/,45m
 2025-10-16,Behavioral & Cultural Fit,"Tell me about a time you managed change.","Microsoft values 'adaptability'.",30m
 2025-10-16,System Design,Design Distributed Cache,"Cover consistency, invalidation. Resource: https://medium.com/system-design-blog/distributed-caching-system-design-7f53b9f15c56",60m
-
 2025-10-17,DSA,Kth Largest Element in Array,LeetCode #215 - Use min-heap. https://leetcode.com/problems/kth-largest-element-in-an-array/,45m
 2025-10-17,Behavioral & Cultural Fit,"Tell me about a time you set high standards.","Amazon LP: 'Insist on the Highest Standards'.",30m
 2025-10-17,System Design,Design URL Crawler,"Focus on distributed crawling, politeness policy. Resource: https://github.com/donnemartin/system-design-primer#design-a-web-crawler",60m
-
 2025-10-18,DSA,Top K Frequent Elements,LeetCode #347 - Heap or bucket sort. https://leetcode.com/problems/top-k-frequent-elements/,45m
 2025-10-18,Behavioral & Cultural Fit,"Tell me about a time you resolved a misunderstanding.","Google values 'effective communication'.",30m
 2025-10-18,System Design,Review Week 1–4 Designs,"Revise URL Shortener, Chat App, News Feed, Rate Limiter. Explain aloud in English.",60m
