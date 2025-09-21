@@ -56,14 +56,9 @@ export const importTasks = async (
   return { categories: uniqueAreas.length, tasks: tasksToImport.length }
 }
 
-export const loadSampleData = async (onTaskAdded: (task: any) => void | Promise<any>) => {
+export const loadSampleData = async (importFunc: (event?: React.ChangeEvent<HTMLInputElement>, text?: string) => Promise<void>) => {
   const response = await fetch(process.env.NEXT_PUBLIC_SAMPLE_CSV_URL || 'https://cpgghmisukyrvtgeplep.supabase.co/storage/v1/object/public/assets/tasks.csv')
   const text = await response.text()
   const tasksToImport = parseCSV(text)
-  
-  for (const task of tasksToImport) {
-    if (task.date && task.title) {
-      onTaskAdded(task)
-    }
-  }
+  await importFunc(undefined, text)
 }

@@ -65,19 +65,49 @@ export default function AppPage() {
 
 
 
-  const handleFileImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (!file) return
+  const handleFileImport = async (event?: React.ChangeEvent<HTMLInputElement>, text?: string) => {
+    const fromUpload = (event?: React.ChangeEvent<HTMLInputElement>) => {
+      return event?.target.files?.[0] ? true : false
+    }
+    const fromText = (text?: string) => {
+      return text ? true : false
+    }
+    if (!fromUpload(event) && !fromText(text)) {
+      alert('No file selected or text provided for import.')
+      return
+    }
 
+    const getFileText = async (): Promise<{ tasks: string, type: string } | null> => {
+      if (event && fromUpload(event)) {
+        const file = event.target.files?.[0]
+        if (!file) return null
+        if (file.name.endsWith('.csv')) {
+          const text = await file.text()
+          return {tasks: text, type: 'csv'};
+        } else if (file.name.endsWith('.json')) {
+          const data = JSON.parse(await file.text())
+          return {tasks: JSON.stringify(data), type: 'json'}
+        }
+      } else if (text && fromText(text)) {
+        return {tasks: text, type: 'csv'}
+      }
+      return null
+    }
     setImporting(true)
     try {
-      const text = await file.text()
+      const tobeimported = await getFileText()
+      if (!tobeimported) {
+        alert('Failed to read the file or text for import.')
+        setImporting(false)
+        return
+      }
+      const { tasks: fileText, type } = tobeimported
       let tasksToImport: any[] = []
 
-      if (file.name.endsWith('.csv')) {
-        tasksToImport = parseCSV(text)
-      } else if (file.name.endsWith('.json')) {
-        const data = JSON.parse(text)
+      if (type === 'csv') {
+        tasksToImport = parseCSV(fileText)
+      } else if (type === 'json') {
+        const data = JSON.parse(fileText)
         tasksToImport = Array.isArray(data) ? data : data.tasks || []
       }
 
@@ -174,6 +204,7 @@ export default function AppPage() {
             onUpdateTask={updateTask}
             onDeleteTasks={deleteTasks}
             onTaskAdded={handleTaskAdded}
+            handleFileImport={handleFileImport}
             onCategoriesChange={handleCategoriesChange}
           />
         </div>

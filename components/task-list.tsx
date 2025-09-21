@@ -25,10 +25,11 @@ interface TaskListProps {
   onUpdateTask: (id: string, updates: Partial<Task>) => Promise<Task>
   onDeleteTasks?: (ids: string[]) => Promise<void>
   onTaskAdded?: (task: Task) => void
+  handleFileImport?: (event?: React.ChangeEvent<HTMLInputElement>, text?: string) => Promise<void>
   onCategoriesChange?: (categories: Category[]) => void
 }
 
-export function TaskList({ tasks, categories, onUpdateTask, onDeleteTasks, onTaskAdded, onCategoriesChange }: TaskListProps) {
+export function TaskList({ tasks, categories, onUpdateTask, onDeleteTasks, onTaskAdded, handleFileImport, onCategoriesChange }: TaskListProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [statusFilter, setStatusFilter] = useState<string>("all")
   const [focusAreaFilter, setFocusAreaFilter] = useState<string>("all")
@@ -297,7 +298,7 @@ export function TaskList({ tasks, categories, onUpdateTask, onDeleteTasks, onTas
                       className="mt-4"
                       onClick={async () => {
                         try {
-                          await loadSampleData(onTaskAdded!)
+                          await loadSampleData(handleFileImport!)
                         } catch (error) {
                           console.error('Failed to load sample data:', error)
                         }
